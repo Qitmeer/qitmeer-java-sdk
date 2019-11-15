@@ -19,7 +19,6 @@ public class Qitmeer {
 
 	/**
 	 * 获取当前区块高度
-	 * @return
 	 */
 	public  ServiceResult getBlockCount() {
 		SendJson s = new SendJson("getBlockCount",new ArrayList<Object>());
@@ -32,7 +31,6 @@ public class Qitmeer {
 	 * 根据order获取区块信息
 	 * @param order
 	 * @param show 是否显示json true false
-	 * @return
 	 */
 	public  ServiceResult getBlockByOrder(int order,boolean show) {
 		List<Object> params = new ArrayList<Object>();
