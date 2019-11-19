@@ -244,23 +244,6 @@ public class Qitmeer {
 	}
 
 	/**
-	 * 交易签名
-	 * @param prikey 私钥
-	 * @param raw_tx 代签名交易
-	 * @return
-	 */
-	public  ServiceResult txSign(String prikey,String  raw_tx)  {
-		List<Object> params = new ArrayList<Object>();
-		params.add(prikey);
-		params.add(raw_tx);
-		SendJson s = new SendJson("txSign",params);
-		String sendMsg =JSON.toJSONString(s);
-		String rep = HttpClientUtil.doPost(url, sendMsg, "utf-8",authorization());
-		System.out.println("rep:"+rep);
-		return QitmeerUtil.pareRec(rep);
-	}
-
-	/**
 	 * 发送交易
 	 * @param sign_raw_tx
 	 * @param allow_high_fee

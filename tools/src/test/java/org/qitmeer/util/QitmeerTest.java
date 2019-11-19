@@ -161,15 +161,6 @@ public class QitmeerTest {
     }
 
     @Test
-    public void txSignTest(){
-        ServiceResult result =  q.txSign("test","0100000001f98241b6565eee6876d24a018ea416962c1c8849f902ca19f6a9824477db9e0100000000ffffffff0178000000000000001976a914bd4d1888cb054b2755d65d93c356573e4d283ead88ac00000000000000000100");
-        if (result.code==0){
-            System.out.println("txSignTest:"+result.data.toString());
-        }else{
-            System.out.println("txSignTest:"+result.msg);
-        }
-    }
-    @Test
     public void sendRawTransactionTest(){
         ServiceResult result =  q.sendRawTransaction("0100000001f98241b6565eee6876d24a018ea416962c1c8849f902ca19f6a9824477db9e0100000000ffffffff0178000000000000001976a914bd4d1888cb054b2755d65d93c356573e4d283ead88ac00000000000000000100",true);
         if (result.code==0){
