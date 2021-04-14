@@ -3,7 +3,6 @@ package org.qitmeer.model;
 import java.util.List;
 
 public class ScriptPubKeyResult {
-
     public String asm;
     public String hex;
     public int reqSigs;

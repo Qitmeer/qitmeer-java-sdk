@@ -7,11 +7,12 @@ public class SendJson {
     public String method;
     public String jsonrpc;
     public List<Object> params;
-    public SendJson(String method,List<Object>  params){
-        this.id="1";
-        this.method=method;
-        this.jsonrpc="jsonrpc";
-        this.params=params;
+
+    public SendJson(String method, List<Object> params) {
+        this.id = "1";
+        this.method = method;
+        this.jsonrpc = "jsonrpc";
+        this.params = params;
     }
 
     public String getId() {

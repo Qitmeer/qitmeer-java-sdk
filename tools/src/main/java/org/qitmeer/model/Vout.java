@@ -1,8 +1,8 @@
 package org.qitmeer.model;
 
 public class Vout {
-    public long amount ;
-    public ScriptPubKeyResult scriptPubKey  ;
+    public long amount;
+    public ScriptPubKeyResult scriptPubKey;
 
     public long getAmount() {
         return amount;

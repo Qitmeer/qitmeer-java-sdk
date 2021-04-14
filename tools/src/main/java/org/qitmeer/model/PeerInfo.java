@@ -3,8 +3,6 @@ package org.qitmeer.model;
 import java.util.List;
 
 public class PeerInfo {
-
-
     private String uuid;
     private int id;
     private String addr;
@@ -24,9 +22,11 @@ public class PeerInfo {
     private int banscore;
     private boolean syncnode;
     private Graphstate graphstate;
+
     public void setUuid(String uuid) {
         this.uuid = uuid;
     }
+
     public String getUuid() {
         return uuid;
     }
@@ -34,6 +34,7 @@ public class PeerInfo {
     public void setId(int id) {
         this.id = id;
     }
+
     public int getId() {
         return id;
     }
@@ -41,6 +42,7 @@ public class PeerInfo {
     public void setAddr(String addr) {
         this.addr = addr;
     }
+
     public String getAddr() {
         return addr;
     }
@@ -48,6 +50,7 @@ public class PeerInfo {
     public void setAddrlocal(String addrlocal) {
         this.addrlocal = addrlocal;
     }
+
     public String getAddrlocal() {
         return addrlocal;
     }
@@ -55,6 +58,7 @@ public class PeerInfo {
     public void setServices(String services) {
         this.services = services;
     }
+
     public String getServices() {
         return services;
     }
@@ -62,6 +66,7 @@ public class PeerInfo {
     public void setRelaytxes(boolean relaytxes) {
         this.relaytxes = relaytxes;
     }
+
     public boolean getRelaytxes() {
         return relaytxes;
     }
@@ -69,6 +74,7 @@ public class PeerInfo {
     public void setLastsend(long lastsend) {
         this.lastsend = lastsend;
     }
+
     public long getLastsend() {
         return lastsend;
     }
@@ -76,6 +82,7 @@ public class PeerInfo {
     public void setLastrecv(long lastrecv) {
         this.lastrecv = lastrecv;
     }
+
     public long getLastrecv() {
         return lastrecv;
     }
@@ -83,6 +90,7 @@ public class PeerInfo {
     public void setBytessent(int bytessent) {
         this.bytessent = bytessent;
     }
+
     public int getBytessent() {
         return bytessent;
     }
@@ -90,6 +98,7 @@ public class PeerInfo {
     public void setBytesrecv(int bytesrecv) {
         this.bytesrecv = bytesrecv;
     }
+
     public int getBytesrecv() {
         return bytesrecv;
     }
@@ -97,6 +106,7 @@ public class PeerInfo {
     public void setConntime(long conntime) {
         this.conntime = conntime;
     }
+
     public long getConntime() {
         return conntime;
     }
@@ -104,6 +114,7 @@ public class PeerInfo {
     public void setTimeoffset(int timeoffset) {
         this.timeoffset = timeoffset;
     }
+
     public int getTimeoffset() {
         return timeoffset;
     }
@@ -111,6 +122,7 @@ public class PeerInfo {
     public void setPingtime(int pingtime) {
         this.pingtime = pingtime;
     }
+
     public int getPingtime() {
         return pingtime;
     }
@@ -118,6 +130,7 @@ public class PeerInfo {
     public void setVersion(int version) {
         this.version = version;
     }
+
     public int getVersion() {
         return version;
     }
@@ -125,6 +138,7 @@ public class PeerInfo {
     public void setSubver(String subver) {
         this.subver = subver;
     }
+
     public String getSubver() {
         return subver;
     }
@@ -132,6 +146,7 @@ public class PeerInfo {
     public void setInbound(boolean inbound) {
         this.inbound = inbound;
     }
+
     public boolean getInbound() {
         return inbound;
     }
@@ -139,6 +154,7 @@ public class PeerInfo {
     public void setBanscore(int banscore) {
         this.banscore = banscore;
     }
+
     public int getBanscore() {
         return banscore;
     }
@@ -146,6 +162,7 @@ public class PeerInfo {
     public void setSyncnode(boolean syncnode) {
         this.syncnode = syncnode;
     }
+
     public boolean getSyncnode() {
         return syncnode;
     }
@@ -153,9 +170,11 @@ public class PeerInfo {
     public void setGraphstate(Graphstate graphstate) {
         this.graphstate = graphstate;
     }
+
     public Graphstate getGraphstate() {
         return graphstate;
     }
+
 
     public class Graphstate {
 
@@ -163,9 +182,11 @@ public class PeerInfo {
         private int mainorder;
         private int mainheight;
         private int layer;
+
         public void setTips(List<String> tips) {
             this.tips = tips;
         }
+
         public List<String> getTips() {
             return tips;
         }
@@ -173,6 +194,7 @@ public class PeerInfo {
         public void setMainorder(int mainorder) {
             this.mainorder = mainorder;
         }
+
         public int getMainorder() {
             return mainorder;
         }
@@ -180,6 +202,7 @@ public class PeerInfo {
         public void setMainheight(int mainheight) {
             this.mainheight = mainheight;
         }
+
         public int getMainheight() {
             return mainheight;
         }
@@ -187,6 +210,7 @@ public class PeerInfo {
         public void setLayer(int layer) {
             this.layer = layer;
         }
+
         public int getLayer() {
             return layer;
         }

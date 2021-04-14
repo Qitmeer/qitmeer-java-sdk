@@ -5,18 +5,21 @@ public class ServiceResult {
     public String msg;
     public Object data;
 
-    public ServiceResult(){
+    public ServiceResult() {
     }
-    public ServiceResult(int code,String msg,Object data){
+
+    public ServiceResult(int code, String msg, Object data) {
         this.code = code;
         this.msg = msg;
-        this.data =data;
+        this.data = data;
     }
-    public static ServiceResult succ(Object data){
-        return new ServiceResult(0,"成功",data);
+
+    public static ServiceResult succ(Object data) {
+        return new ServiceResult(0, "成功", data);
     }
-    public static ServiceResult fail(int code,String msg){
-        return new ServiceResult(code,msg,null);
+
+    public static ServiceResult fail(int code, String msg) {
+        return new ServiceResult(code, msg, null);
     }
 
     public int getCode() {

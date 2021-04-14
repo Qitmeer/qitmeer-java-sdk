@@ -3,22 +3,21 @@ package org.qitmeer.model;
 import java.util.List;
 
 public class TxRawResult {
-
-    public  String hex;
-    public  String txid;
-    public  String txhash;
-    public  int size;
-    public  int version;
-    public  int locktime;
-    public  int expire;
-    public  List<Vin> vin;
-    public  List<Vout> vout;
-    public  String blockhash;
-    public  int blockorder;
-    public  int txindex;
-    public  long confirmations;
-    public  long time;
-    public  long blocktime;
+    public String hex;
+    public String txid;
+    public String txhash;
+    public int size;
+    public int version;
+    public int locktime;
+    public int expire;
+    public List<Vin> vin;
+    public List<Vout> vout;
+    public String blockhash;
+    public int blockorder;
+    public int txindex;
+    public long confirmations;
+    public long time;
+    public long blocktime;
 
     public String getHex() {
         return hex;
