@@ -16,7 +16,7 @@ public class HttpClientUtil {
         HttpPost httpPost = null;
         String result = null;
         try {
-            httpClient = new SSLClient();
+            httpClient = SSLClient.builder();
             httpPost = new HttpPost(url);
             httpPost.addHeader("Content-Type", "application/json");
             if (authorization != null && !authorization.equals("")) {
