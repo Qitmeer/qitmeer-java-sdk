@@ -3,7 +3,6 @@
 build
 core
 examples
-gradle
 wallettemplate
 *.bat
 *.gradle*
