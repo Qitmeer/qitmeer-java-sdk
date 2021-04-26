@@ -1,7 +1,6 @@
 package org.qitmeer.model;
 
 public class ScriptSig {
-
     public String asm;
     public String hex;
 

@@ -11,9 +11,11 @@ public class BlockHeader {
     private int layer;
     private long time;
     private Pow pow;
+
     public void setHash(String hash) {
         this.hash = hash;
     }
+
     public String getHash() {
         return hash;
     }
@@ -21,6 +23,7 @@ public class BlockHeader {
     public void setConfirmations(int confirmations) {
         this.confirmations = confirmations;
     }
+
     public int getConfirmations() {
         return confirmations;
     }
@@ -28,6 +31,7 @@ public class BlockHeader {
     public void setVersion(int version) {
         this.version = version;
     }
+
     public int getVersion() {
         return version;
     }
@@ -35,6 +39,7 @@ public class BlockHeader {
     public void setParentroot(String parentroot) {
         this.parentroot = parentroot;
     }
+
     public String getParentroot() {
         return parentroot;
     }
@@ -42,6 +47,7 @@ public class BlockHeader {
     public void setTxRoot(String txRoot) {
         this.txRoot = txRoot;
     }
+
     public String getTxRoot() {
         return txRoot;
     }
@@ -49,6 +55,7 @@ public class BlockHeader {
     public void setStateRoot(String stateRoot) {
         this.stateRoot = stateRoot;
     }
+
     public String getStateRoot() {
         return stateRoot;
     }
@@ -56,6 +63,7 @@ public class BlockHeader {
     public void setDifficulty(long difficulty) {
         this.difficulty = difficulty;
     }
+
     public long getDifficulty() {
         return difficulty;
     }
@@ -63,6 +71,7 @@ public class BlockHeader {
     public void setLayer(int layer) {
         this.layer = layer;
     }
+
     public int getLayer() {
         return layer;
     }
@@ -70,6 +79,7 @@ public class BlockHeader {
     public void setTime(long time) {
         this.time = time;
     }
+
     public long getTime() {
         return time;
     }
@@ -77,6 +87,7 @@ public class BlockHeader {
     public void setPow(Pow pow) {
         this.pow = pow;
     }
+
     public Pow getPow() {
         return pow;
     }

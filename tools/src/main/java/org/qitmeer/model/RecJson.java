@@ -5,9 +5,11 @@ public class RecJson {
     private String id;
     private String result;
     private Error error;
+
     public void setJsonrpc(String jsonrpc) {
         this.jsonrpc = jsonrpc;
     }
+
     public String getJsonrpc() {
         return jsonrpc;
     }
@@ -37,9 +39,7 @@ public class RecJson {
     }
 
 
-
-
-    public class Error{
+    public class Error {
         private String code;
         private String message;
 
