@@ -17,6 +17,17 @@ public class Qitmeer {
         this.pass = pass;
     }
 
+    public ServiceResult generateBlock(int count) {
+        List<Object> params = new ArrayList<Object>();
+        params.add(count);
+        params.add(6);
+
+        SendJson s = new SendJson("miner_generate", params);
+        String sendMsg = JSON.toJSONString(s);
+        String rep = HttpClientUtil.doPost(url, sendMsg, "utf-8", authorization());
+        return QitmeerUtil.pareRec(rep);
+    }
+
     /**
      * 获取当前区块高度
      */

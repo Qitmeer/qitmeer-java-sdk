@@ -2,6 +2,7 @@ package org.qitmeer.util;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.qitmeer.model.*;
 
@@ -9,7 +10,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class QitmeerTest {
-    Qitmeer q = new Qitmeer("http://8.210.117.240/rpc", "admin", "123");
+    private static Qitmeer q = new Qitmeer("https://127.0.0.1:1234", "test", "test");
+    private static String[] blocks = null;
+
+    @BeforeClass
+    public static void generateBlockTest() {
+        ServiceResult result = q.generateBlock(10);
+        if (result.code == 0) {
+
+            String rs = result.data.toString().replace("\"", "");
+            rs = rs.substring(1, rs.length() - 1);
+            blocks = rs.split(",");
+            System.out.println("generateBlockTest:\r\n" + rs);
+        } else {
+            System.out.println("generateBlockTest:\r\n" + result.msg);
+        }
+    }
 
     @Test
     public void getBlockCountTest() {
@@ -23,7 +39,7 @@ public class QitmeerTest {
 
     @Test
     public void getBlockByOrderTest() {
-        ServiceResult result = q.getBlockByOrder(1700, true);
+        ServiceResult result = q.getBlockByOrder(1, true);
         if (result.code == 0) {
             JSONObject recJson = JSON.parseObject(result.data.toString());
             Block b = JSON.toJavaObject(recJson, Block.class);
@@ -35,7 +51,7 @@ public class QitmeerTest {
 
     @Test
     public void getBlockHeaderTest() {
-        ServiceResult result = q.getBlockHeader("61f90fa6286d2ad8290260775aeb07e2f70b1d8184d9ded5f852983dadd25c94", true);
+        ServiceResult result = q.getBlockHeader(blocks[2], true);
         if (result.code == 0) {
             JSONObject recJson = JSON.parseObject(result.data.toString());
             BlockHeader b = JSON.toJavaObject(recJson, BlockHeader.class);
@@ -47,7 +63,7 @@ public class QitmeerTest {
 
     @Test
     public void getBlockWeightTest() {
-        ServiceResult result = q.getBlockWeight("61f90fa6286d2ad8290260775aeb07e2f70b1d8184d9ded5f852983dadd25c94");
+        ServiceResult result = q.getBlockWeight(blocks[3]);
         if (result.code == 0) {
             System.out.println("getBlockWeightTest:\r\n" + result.data.toString());
         } else {
@@ -57,7 +73,7 @@ public class QitmeerTest {
 
     @Test
     public void getBlockByhashTest() {
-        ServiceResult result = q.getBlockByhash("61f90fa6286d2ad8290260775aeb07e2f70b1d8184d9ded5f852983dadd25c94", true);
+        ServiceResult result = q.getBlockByhash(blocks[4], true);
         if (result.code == 0) {
             JSONObject recJson = JSON.parseObject(result.data.toString());
             Block b = JSON.toJavaObject(recJson, Block.class);
@@ -69,7 +85,7 @@ public class QitmeerTest {
 
     @Test
     public void getBlockHashTest() {
-        ServiceResult result = q.getBlockHash(1700);
+        ServiceResult result = q.getBlockHash(blocks.length);
         if (result.code == 0) {
             System.out.println("getBlockHashTest:\r\n" + result.data.toString());
         } else {
@@ -89,7 +105,7 @@ public class QitmeerTest {
 
     @Test
     public void isOnMainChain() {
-        ServiceResult result = q.isOnMainChain("61f90fa6286d2ad8290260775aeb07e2f70b1d8184d9ded5f852983dadd25c94");
+        ServiceResult result = q.isOnMainChain(blocks[5]);
         if (result.code == 0) {
             System.out.println("isOnMainChain:\r\n" + result.data.toString());
         } else {
@@ -122,7 +138,7 @@ public class QitmeerTest {
 
     @Test
     public void getUtxoTest() {
-        ServiceResult result = q.getUtxo("243907bffb97da381c98a095cb758c46f720980511f2df8923e93a64258cfb1e", 0, true);
+        ServiceResult result = q.getUtxo("bae58ff3e0870938e241224fc8736998f5e8f6cf6423c383493bf13133e4d37d", 0, true);
         if (result.code == 0) {
             JSONObject recJson = JSON.parseObject(result.data.toString());
             Utxo b = JSON.toJavaObject(recJson, Utxo.class);
@@ -139,7 +155,7 @@ public class QitmeerTest {
         u.setVout(0);
         List<FromTx> list = new ArrayList<>();
         list.add(u);
-        ServiceResult result = q.createRawTransaction(list, "TmgD1mu8zMMV9aWmJrXqQYnWRhR9SBfDZG6", 120, 0);
+        ServiceResult result = q.createRawTransaction(list, "RmQb2VrPtd9nftMvKtRMxN297dzN5VydmMJ", 10, 0);
         if (result.code == 0) {
             System.out.println("createRawTransactionTest:\r\n" + result.data.toString());
         } else {
@@ -150,7 +166,7 @@ public class QitmeerTest {
 
     @Test
     public void decodeRawTransactionTest() {
-        ServiceResult result = q.decodeRawTransaction("0100000001f98241b6565eee6876d24a018ea416962c1c8849f902ca19f6a9824477db9e0100000000ffffffff0178000000000000001976a914bd4d1888cb054b2755d65d93c356573e4d283ead88ac00000000000000000100");
+        ServiceResult result = q.decodeRawTransaction("0100000001f98241b6565eee6876d24a018ea416962c1c8849f902ca19f6a9824477db9e0100000000ffffffff0100000a000000000000001976a9149887f352a02c4e60d99bcd2eab33c8b7b0198b0488ac00000000000000008214a3600100");
         if (result.code == 0) {
             System.out.println("decodeRawTransactionTest:\r\n" + result.data.toString());
         } else {
@@ -160,7 +176,7 @@ public class QitmeerTest {
 
     @Test
     public void getRawTransactionTest() {
-        ServiceResult result = q.getRawTransaction("243907bffb97da381c98a095cb758c46f720980511f2df8923e93a64258cfb1e", true);
+        ServiceResult result = q.getRawTransaction("bae58ff3e0870938e241224fc8736998f5e8f6cf6423c383493bf13133e4d37d", true);
         if (result.code == 0) {
             JSONObject recJson = JSON.parseObject(result.data.toString());
             TxRawResult b = JSON.toJavaObject(recJson, TxRawResult.class);

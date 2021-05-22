@@ -11,7 +11,7 @@ public class SendJson {
     public SendJson(String method, List<Object> params) {
         this.id = "1";
         this.method = method;
-        this.jsonrpc = "jsonrpc";
+        this.jsonrpc = "2.0";
         this.params = params;
     }
 
