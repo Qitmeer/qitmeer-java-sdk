@@ -35,7 +35,7 @@ jobs:
         run: cd qitmeer && make all
 
       - name: Run Qitmeer
-        run: cd qitmeer/build/bin && nohup ./qitmeer --privnet --rpclisten 127.0.0.1:1234 --rpcuser test --rpcpass test --modules=miner --modules=qitmeer --miningaddr=TnL4tq3DmtokPZGn66G4dDU2P5CxUxxrsgp > run.log 2>&1 &
+        run: cd qitmeer/build/bin && nohup ./qitmeer --privnet --rpclisten 127.0.0.1:1234 --rpcuser test --rpcpass test --modules=miner --modules=qitmeer --miningaddr=RmQb2VrPtd9nftMvKtRMxN297dzN5VydmMJ > run.log 2>&1 &
 
       - name: Checkout code
         uses: actions/checkout@v2
