@@ -21,6 +21,7 @@ public class Block {
     public List<String> parents;
     public List<String> children;
     public boolean txsvalid;
+    public List<TransactionFees> transactionFees;
 
     public String getHash() {
         return hash;
@@ -148,6 +149,14 @@ public class Block {
 
     public void setHash(String hash) {
         this.hash = hash;
+    }
+
+    public List<TransactionFees> getTransactionFees() {
+        return this.transactionFees;
+    }
+
+    public void getTransactionFees(List<TransactionFees> fess) {
+        this.transactionFees = fess;
     }
 
 }
